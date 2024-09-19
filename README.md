@@ -34,13 +34,13 @@ We provide a set of pre-implemented deep-learning based SLAM algorithms.
     <th><a href="https://github.com/zju3dv/NeuralRecon">NeuralRecon</a></th>
   </tr>
   <tr>
-    <td><img src="./docs/imgs/nice_slam.gif" alt="nice-slam" width="150px" /></td>
-    <td><img src="./docs/imgs/co_slam.gif" alt="co-slam" width="150px" /></td>
-    <td><img src="./docs/imgs/vox_fusion.gif" alt="vox-fusion" width="150px" /></td>
-    <td><img src="./docs/imgs/point_slam.gif" alt="point-slam" width="150px" /></td>
-    <td><img src="./docs/imgs/splatam.gif" alt="splaTAM" width="150px" /></td>
-    <td><img src="./docs/imgs/dpvo.gif" alt="dpvo" width="150px" /></td>
-    <td><img src="./docs/imgs/neural_recon.gif" alt="neural_recon" width="150px" /></td>
+    <td><img src="./docs/imgs/nice_slam.gif" alt="nice-slam" width="100px" /></td>
+    <td><img src="./docs/imgs/co_slam.gif" alt="co-slam" width="100px" /></td>
+    <td><img src="./docs/imgs/vox_fusion.gif" alt="vox-fusion" width="100px" /></td>
+    <td><img src="./docs/imgs/point_slam.gif" alt="point-slam" width="100px" /></td>
+    <td><img src="./docs/imgs/splatam.gif" alt="splaTAM" width="100px" /></td>
+    <td><img src="./docs/imgs/dpvo.gif" alt="dpvo" width="100px" /></td>
+    <td><img src="./docs/imgs/neural_recon.gif" alt="neural_recon" width="100px" /></td>
   </tr>
 </table>
 
