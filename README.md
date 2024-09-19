@@ -25,25 +25,24 @@ We provide a set of pre-implemented deep-learning based SLAM algorithms.
 
 <table>
   <tr>
-    <th style="width: 150px;"><a href="https://github.com/cvg/nice-slam">NICE-SLAM</a></th>
-    <th style="width: 150px;"><a href="https://github.com/HengyiWang/Co-SLAM">Co-SLAM</a></th>
-    <th style="width: 150px;"><a href="https://github.com/zju3dv/Vox-Fusion">Vox-Fusion</a></th>
-    <th style="width: 150px;"><a href="https://github.com/eriksandstroem/Point-SLAM">Point-SLAM</a></th>
-    <th style="width: 150px;"><a href="https://github.com/spla-tam/SplaTAM">SplaTAM</a></th>
-    <th style="width: 150px;"><a href="https://github.com/princeton-vl/DPVO">DPVO</a></th>
-    <th style="width: 150px;"><a href="https://github.com/zju3dv/NeuralRecon">NeuralRecon</a></th>
+    <th><a href="https://github.com/cvg/nice-slam">NICE-SLAM</a></th>
+    <th><a href="https://github.com/HengyiWang/Co-SLAM">Co-SLAM</a></th>
+    <th><a href="https://github.com/zju3dv/Vox-Fusion">Vox-Fusion</a></th>
+    <th><a href="https://github.com/eriksandstroem/Point-SLAM">Point-SLAM</a></th>
+    <th><a href="https://github.com/spla-tam/SplaTAM">SplaTAM</a></th>
+    <th><a href="https://github.com/princeton-vl/DPVO">DPVO</a></th>
+    <th><a href="https://github.com/zju3dv/NeuralRecon">NeuralRecon</a></th>
   </tr>
   <tr>
-    <td><img src="./docs/imgs/nice_slam.gif" alt="nice-slam" style="zoom: 50%;" /></td>
-    <td><img src="./docs/imgs/co_slam.gif" alt="co-slam" style="zoom: 50%;" /></td>
-    <td><img src="./docs/imgs/vox_fusion.gif" alt="vox-fusion" style="zoom: 50%;" /></td>
-    <td><img src="./docs/imgs/point_slam.gif" alt="point-slam" style="zoom: 50%;" /></td>
-    <td><img src="./docs/imgs/splatam.gif" alt="splaTAM" style="zoom: 50%;" /></td>
-    <td><img src="./docs/imgs/dpvo.gif" alt="dpvo" style="zoom: 50%;" /></td>
-    <td><img src="./docs/imgs/neural_recon.gif" alt="neural_recon" style="zoom: 50%;" /></td>
+    <td><img src="./docs/imgs/nice_slam.gif" alt="nice-slam" width="150px" /></td>
+    <td><img src="./docs/imgs/co_slam.gif" alt="co-slam" width="150px" /></td>
+    <td><img src="./docs/imgs/vox_fusion.gif" alt="vox-fusion" width="150px" /></td>
+    <td><img src="./docs/imgs/point_slam.gif" alt="point-slam" width="150px" /></td>
+    <td><img src="./docs/imgs/splatam.gif" alt="splaTAM" width="150px" /></td>
+    <td><img src="./docs/imgs/dpvo.gif" alt="dpvo" width="150px" /></td>
+    <td><img src="./docs/imgs/neural_recon.gif" alt="neural_recon" width="150px" /></td>
   </tr>
 </table>
-
 
 ## Quickstart
 
