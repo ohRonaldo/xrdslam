@@ -42,6 +42,7 @@ class AlgorithmConfig(InstantiateConfig):
 
 
 class Algorithm():
+
     def __init__(self, config: AlgorithmConfig, camera: Camera,
                  device: str) -> None:
         self.config = config

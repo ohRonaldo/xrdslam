@@ -2,6 +2,7 @@ import torch
 
 
 class FeatureGrid():
+
     def __init__(self, xyz_len, grid_len, c_dim, std=0.01):
         super(FeatureGrid, self).__init__()
 

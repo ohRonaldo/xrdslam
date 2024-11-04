@@ -31,6 +31,7 @@ class TrackerConfig(InstantiateConfig):
 
 
 class Tracker():
+
     def __init__(self,
                  config: TrackerConfig,
                  dataset: BaseDataset,

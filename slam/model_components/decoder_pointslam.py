@@ -13,11 +13,12 @@ class GaussianFourierFeatureTransform(torch.nn.Module):
     """Modified based on the implementation of Gaussian Fourier feature
     mapping.
 
-    "Fourier Features Let Networks Learn High Frequency Functions
-    in Low Dimensional Domains":
-       https://arxiv.org/abs/2006.10739
-       https://people.eecs.berkeley.edu/~bmild/fourfeat/index.html
+    "Fourier Features Let Networks Learn High Frequency Functions in Low
+    Dimensional Domains":
+    https://arxiv.org/abs/2006.10739
+    https://people.eecs.berkeley.edu/~bmild/fourfeat/index.html
     """
+
     def __init__(self,
                  num_input_channels,
                  mapping_size=93,
@@ -47,6 +48,7 @@ class GaussianFourierFeatureTransform(torch.nn.Module):
 
 
 class DenseLayer(nn.Linear):
+
     def __init__(self,
                  in_dim: int,
                  out_dim: int,
@@ -65,6 +67,7 @@ class DenseLayer(nn.Linear):
 
 
 class Same(nn.Module):
+
     def __init__(self, mapping_size=3):
         super().__init__()
         self.mapping_size = mapping_size
@@ -91,6 +94,7 @@ class MLP_geometry(nn.Module):
         middle level and concat to the current feature.
         use_view_direction (bool): whether to use view direction or not.
     """
+
     def __init__(self,
                  use_dynamic_radius,
                  pointcloud_nn_weighting,
@@ -215,7 +219,7 @@ class MLP_geometry(nn.Module):
                 is_tracker=False,
                 pts_views_d=None,
                 dynamic_r_query=None):
-        """forward method of geometric decoder.
+        """Forward method of geometric decoder.
 
         Args:
             p (tensor): sampling locations, N*3
@@ -326,6 +330,7 @@ class MLP_color(nn.Module):
         level and concat to the current feature.
         use_view_direction (bool): whether to use view direction.
     """
+
     def __init__(self,
                  use_dynamic_radius,
                  pointcloud_nn_weighting,
@@ -473,7 +478,7 @@ class MLP_color(nn.Module):
                 pts_views_d=None,
                 dynamic_r_query=None,
                 exposure_feat=None):
-        """forward method of decoder.
+        """Forward method of decoder.
 
         Args:
             p (tensor): sampling locations, N*3
@@ -551,6 +556,7 @@ class POINT(nn.Module):
         pos_embedding_method (str): positional embedding method.
         use_view_direction (bool): use view direction or not.
     """
+
     def __init__(self,
                  use_dynamic_radius,
                  pointcloud_nn_weighting,

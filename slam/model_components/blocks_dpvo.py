@@ -7,6 +7,7 @@ import torch_scatter
 
 
 class LayerNorm1D(nn.Module):
+
     def __init__(self, dim):
         super(LayerNorm1D, self).__init__()
         self.norm = nn.LayerNorm(dim, eps=1e-4)
@@ -16,6 +17,7 @@ class LayerNorm1D(nn.Module):
 
 
 class GatedResidual(nn.Module):
+
     def __init__(self, dim):
         super().__init__()
 
@@ -29,6 +31,7 @@ class GatedResidual(nn.Module):
 
 
 class SoftAgg(nn.Module):
+
     def __init__(self, dim=512, expand=True):
         super(SoftAgg, self).__init__()
         self.dim = dim
@@ -50,6 +53,7 @@ class SoftAgg(nn.Module):
 
 
 class SoftAggBasic(nn.Module):
+
     def __init__(self, dim=512, expand=True):
         super(SoftAggBasic, self).__init__()
         self.dim = dim
@@ -75,6 +79,7 @@ GRAD_CLIP = 0.1
 
 
 class GradClip(torch.autograd.Function):
+
     @staticmethod
     def forward(ctx, x):
         return x
@@ -87,6 +92,7 @@ class GradClip(torch.autograd.Function):
 
 
 class GradientClip(nn.Module):
+
     def __init__(self):
         super(GradientClip, self).__init__()
 
@@ -95,6 +101,7 @@ class GradientClip(nn.Module):
 
 
 class GradZero(torch.autograd.Function):
+
     @staticmethod
     def forward(ctx, x):
         return x
@@ -109,6 +116,7 @@ class GradZero(torch.autograd.Function):
 
 
 class GradientZero(nn.Module):
+
     def __init__(self):
         super(GradientZero, self).__init__()
 
@@ -117,6 +125,7 @@ class GradientZero(nn.Module):
 
 
 class GradMag(torch.autograd.Function):
+
     @staticmethod
     def forward(ctx, x):
         return x

@@ -30,6 +30,7 @@ class MesherConfig(InstantiateConfig):
 
 
 class Mesher():
+
     def __init__(self, config: MesherConfig, camera: Camera, bounding_box,
                  marching_cubes_bound) -> None:
         self.config = config

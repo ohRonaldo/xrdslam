@@ -19,6 +19,7 @@ def inverse_sigmoid(x):
 
 
 class GaussianCloud(nn.Module):
+
     def __init__(self, init_rgb, init_depth, w2c, camera, prune_dict,
                  densify_dict):
         super(GaussianCloud, self).__init__()

@@ -11,6 +11,7 @@ from pytorch3d.transforms import (matrix_to_quaternion,
 
 
 class OptimizablePose(nn.Module):
+
     def __init__(self, init_pose, separate_LR=True, rot_rep='axis_angle'):
         super().__init__()
         # init_pose=[tx,ty,tz, qx,qy,qz,qw], init_pose=[tx,ty,tz, rx,ry,rz]

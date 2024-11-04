@@ -14,6 +14,7 @@ class MapperConfig(InstantiateConfig):
 
 
 class Mapper():
+
     def __init__(self, config: MapperConfig) -> None:
         self.config = config
 

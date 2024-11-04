@@ -12,9 +12,10 @@ class GaussianFourierFeatureTransform(torch.nn.Module):
 
     "Fourier Features Let Networks Learn High Frequency Functions in Low
     Dimensional Domains":
-       https://arxiv.org/abs/2006.10739
-       https://people.eecs.berkeley.edu/~bmild/fourfeat/index.html
+    https://arxiv.org/abs/2006.10739
+    https://people.eecs.berkeley.edu/~bmild/fourfeat/index.html
     """
+
     def __init__(self,
                  num_input_channels,
                  mapping_size=93,
@@ -39,6 +40,7 @@ class GaussianFourierFeatureTransform(torch.nn.Module):
 
 class Nerf_positional_embedding(torch.nn.Module):
     """Nerf positional embedding."""
+
     def __init__(self, in_dim, multires, log_sampling=True):
         super().__init__()
         self.log_sampling = log_sampling
@@ -74,6 +76,7 @@ class Nerf_positional_embedding(torch.nn.Module):
 
 
 class Same(nn.Module):
+
     def __init__(self, in_dim):
         super().__init__()
         self.embedding_size = in_dim
@@ -83,6 +86,7 @@ class Same(nn.Module):
 
 
 class Decoder(nn.Module):
+
     def __init__(self,
                  depth=8,
                  width=256,
@@ -150,6 +154,7 @@ class Decoder(nn.Module):
 
 
 class Embeddings(nn.Module):
+
     def __init__(self, num_embeddings, embed_dim):
         super().__init__()
 

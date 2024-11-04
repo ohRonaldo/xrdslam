@@ -105,7 +105,7 @@ class SparseVoxel(Model):
                       inputs,
                       is_mapping,
                       stage=None) -> Dict[str, torch.Tensor]:
-        """color and depth are filled, use 'ray_mask' to select valid rays."""
+        """Color and depth are filled, use 'ray_mask' to select valid rays."""
         loss_dict = {}
 
         # select by svo intersection

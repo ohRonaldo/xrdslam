@@ -18,6 +18,7 @@ class GRUFusion(nn.Module):
        Update hidden state features with ConvGRU.
     2. Substitute TSDF in the global volume when direct_substitute = True.
     """
+
     def __init__(self, cfg, ch_in=None, direct_substitute=False):
         super(GRUFusion, self).__init__()
         self.cfg = cfg
@@ -165,9 +166,11 @@ class GRUFusion(nn.Module):
 
         :param value: (Tensor) fused feature (N, C)
         :param coords: (Tensor) updated coords (N, 3)
-        :param target_volume: (Tensor) tsdf volume (DIM_X, DIM_Y, DIM_Z, 1)
+        :param target_volume: (Tensor) tsdf volume (DIM_X, DIM_Y, DIM_Z,
+            1)
         :param valid: (Tensor) mask: 1 represent in current FBV (N,)
-        :param valid_target: (Tensor) gt mask: 1 represent in current FBV (N,)
+        :param valid_target: (Tensor) gt mask: 1 represent in current
+            FBV (N,)
         :param relative_origin: (Tensor), origin in global volume, (3,)
         :param scale:
         :return:

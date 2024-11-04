@@ -16,6 +16,7 @@ __all__ = ['SPVCNN', 'SConv3d', 'ConvGRU']
 
 
 class BasicConvolutionBlock(nn.Module):
+
     def __init__(self, inc, outc, ks=3, stride=1, dilation=1):
         super().__init__()
         self.net = nn.Sequential(
@@ -31,6 +32,7 @@ class BasicConvolutionBlock(nn.Module):
 
 
 class BasicDeconvolutionBlock(nn.Module):
+
     def __init__(self, inc, outc, ks=3, stride=1):
         super().__init__()
         self.net = nn.Sequential(
@@ -46,6 +48,7 @@ class BasicDeconvolutionBlock(nn.Module):
 
 
 class ResidualBlock(nn.Module):
+
     def __init__(self, inc, outc, ks=3, stride=1, dilation=1):
         super().__init__()
         self.net = nn.Sequential(
@@ -76,6 +79,7 @@ class ResidualBlock(nn.Module):
 
 
 class SPVCNN(nn.Module):
+
     def __init__(self, **kwargs):
         super().__init__()
 
@@ -178,6 +182,7 @@ class SPVCNN(nn.Module):
 
 
 class SConv3d(nn.Module):
+
     def __init__(self, inc, outc, press, vres, ks=3, stride=1, dilation=1):
         super().__init__()
         self.net = spnn.Conv3d(inc,
@@ -198,6 +203,7 @@ class SConv3d(nn.Module):
 
 
 class ConvGRU(nn.Module):
+
     def __init__(self, hidden_dim=128, input_dim=192 + 128, press=1, vres=1):
         super(ConvGRU, self).__init__()
         self.convz = SConv3d(hidden_dim + input_dim, hidden_dim, press, vres,

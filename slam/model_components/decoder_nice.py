@@ -14,9 +14,10 @@ class GaussianFourierFeatureTransform(torch.nn.Module):
 
     "Fourier Features Let Networks Learn High Frequency Functions in Low
     Dimensional Domains":
-       https://arxiv.org/abs/2006.10739
-       https://people.eecs.berkeley.edu/~bmild/fourfeat/index.html
+    https://arxiv.org/abs/2006.10739
+    https://people.eecs.berkeley.edu/~bmild/fourfeat/index.html
     """
+
     def __init__(self,
                  num_input_channels,
                  mapping_size=93,
@@ -40,6 +41,7 @@ class GaussianFourierFeatureTransform(torch.nn.Module):
 
 class Nerf_positional_embedding(torch.nn.Module):
     """Nerf positional embedding."""
+
     def __init__(self, multires, log_sampling=True):
         super().__init__()
         self.log_sampling = log_sampling
@@ -74,6 +76,7 @@ class Nerf_positional_embedding(torch.nn.Module):
 
 
 class DenseLayer(nn.Linear):
+
     def __init__(self,
                  in_dim: int,
                  out_dim: int,
@@ -92,6 +95,7 @@ class DenseLayer(nn.Linear):
 
 
 class Same(nn.Module):
+
     def __init__(self):
         super().__init__()
 
@@ -119,6 +123,7 @@ class MLP(nn.Module):
         concat_feature (bool): whether to get feature from middle
         level and concat to the current feature.
     """
+
     def __init__(self,
                  name='',
                  dim=3,
@@ -250,6 +255,7 @@ class MLP_no_xyz(nn.Module):
         skips (list): list of layers to have skip connection.
         grid_len (float): voxel length of its corresponding feature grid.
     """
+
     def __init__(self,
                  name='',
                  dim=3,
@@ -334,6 +340,7 @@ class NICE(nn.Module):
         coarse (bool): whether or not to use coarse level.
         pos_embedding_method (str): positional embedding method.
     """
+
     def __init__(self,
                  dim=3,
                  c_dim=32,

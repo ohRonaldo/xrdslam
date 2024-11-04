@@ -212,6 +212,7 @@ def raw2outputs_nerf_color(raw,
         weights (tensor, N_rays*N_samples): weights assigned to
         each sampled color.
     """
+
     def raw2alpha(raw, dists, act_fn=F.relu):
         return 1. - torch.exp(-act_fn(raw) * dists)
 
@@ -448,9 +449,10 @@ def sparse_to_dense_channel(locs, values, dim, c, default_val, device):
 def make_recursive_func(func):
     """Code from NeuralRecon, licensed under the Apache License, Version 2.0.
 
-    convert a function into recursive style to handle nested dict/list/tuple
-    variables
+    convert a function into recursive style to handle nested
+    dict/list/tuple variables
     """
+
     def wrapper(vars):
         if isinstance(vars, list):
             return [wrapper(x) for x in vars]

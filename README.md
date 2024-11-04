@@ -221,6 +221,10 @@ Note: The default configuration in the algorithm is suitable for Replica. If you
 The license for our codebase is under the [Apache-2.0](LICENSE).
 Please note that this license only applies to the code in our library, the dependencies of which are separate and individually licensed. In the source code files, we have made specific licensing declarations for the third-party code being used. We would like to pay tribute to open-source implementations to which we rely on. Please be aware that utilizing both external dependencies and the fundamental code from their original sources might impact our codebase's licensing.
 
+## Contributing
+
+We appreciate all contributions to improve XRDSLAM. Please refer to [contributing.md](docs/contributing.md) for the contributing guideline.
+
 ## Acknowledgement
 
 In addition to the implemented algorithm ([NICE-SLAM](https://github.com/cvg/nice-slam),[Co-SLAM](https://github.com/HengyiWang/Co-SLAM),[Vox-Fusion](https://github.com/zju3dv/Vox-Fusion),[Point-SLAM](https://github.com/eriksandstroem/Point-SLAM),[SplaTAM](https://github.com/spla-tam/SplaTAM), [DPVO](https://github.com/princeton-vl/DPVO), [NeuralRecon](https://github.com/zju3dv/NeuralRecon)), our code also adapt some codes from [Nerfstudio](https://github.com/nerfstudio-project/nerfstudio/), [Sdfstudio](https://autonomousvision.github.io/sdfstudio/). Thanks for making the code available.

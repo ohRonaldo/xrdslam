@@ -26,6 +26,7 @@ def _get_depths(alpha):
 
 
 class MnasMulti(nn.Module):
+
     def __init__(self, alpha=1.0):
         super(MnasMulti, self).__init__()
         depths = _get_depths(alpha)

@@ -229,7 +229,8 @@ class ConvOnet2(Model):
         """This function is modified from point-slam, licensed under the Apache
         License, Version 2.0.
 
-        Load parameters of pretrained ConvOnet checkpoints to the decoders.
+        Load parameters of pretrained ConvOnet checkpoints to the
+        decoders.
         """
         ckpt = torch.load(self.config.pretrained_decoders_middle_fine,
                           map_location=self.device)

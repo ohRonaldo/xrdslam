@@ -11,6 +11,7 @@ from typing import Any, Tuple, Type
 # Pretty printing class
 class PrintableConfig:  # pylint: disable=too-few-public-methods
     """Printable Config defining str function."""
+
     def __str__(self):
         lines = [self.__class__.__name__ + ':']
         for key, val in vars(self).items():
