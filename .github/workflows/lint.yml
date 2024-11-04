@@ -22,7 +22,7 @@ jobs:
       run: |
         sudo apt update
         sudo apt install -y ruby
-        pip install pre-commit
+        pip install pre-commit==3.8.0
         pre-commit install
     - name: Linting
       run: pre-commit run --all-files
