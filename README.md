@@ -249,7 +249,7 @@ In addition to the implemented algorithm ([NICE-SLAM](https://github.com/cvg/nic
 
 
 ## Citation
-
+You can find a paper writeup of the framework on [arXiv](https://arxiv.org/abs/2410.23690).
 If you use this toolbox or benchmark in your research, please cite this project.
 
 ```bibtex
