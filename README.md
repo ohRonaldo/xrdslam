@@ -196,7 +196,7 @@ Here are the comparison results on **Replica** datasets. The results of the orig
 
 The algorithms with * suffix are the corresponding algorithms in the XRDSLAM framework. For details, see [benchmark](docs/benchmark.md).
 
-(DPVO is a visual odometry (VO) algorithm that does not generate meshes, and  DPVO paper does not provide results for the Replica datasets. Therefore, here we only present the trajectory metrics from  XRDSLAM framework.  The comparison results of DPVO for the Euroc dataset can be found in the [benchmark](docs/benchmark.md). NeuralRecon is a mapping algorithm, and  NeuralRecon paper does not provide results for the Replica datasets. Therefore, here we only present the mesh metrics from  XRDSLAM framework.  The comparison results of NeuralRecon for the 7Scenes dataset can be found in the [benchmark](docs/benchmark.md).)
+DPVO is a visual odometry (VO) algorithm that does not generate meshes, and  DPVO paper does not provide results for the Replica datasets. Therefore, here we only present the trajectory metrics from  XRDSLAM framework.  The comparison results of DPVO for the Euroc dataset can be found in the [benchmark](docs/benchmark.md). NeuralRecon is a mapping algorithm, and  NeuralRecon paper does not provide results for the Replica datasets. Therefore, here we only present the mesh metrics from  XRDSLAM framework.  The comparison results of NeuralRecon for the 7Scenes dataset can be found in the [benchmark](docs/benchmark.md).
 
 Note: The default configuration in the algorithm is suitable for Replica. If you use other datasets, you need to modify the corresponding configuration items in slam/configs/input_config.py.
 
