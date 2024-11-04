@@ -250,24 +250,18 @@ In addition to the implemented algorithm ([NICE-SLAM](https://github.com/cvg/nic
 
 ## Citation
 You can find a paper writeup of the framework on [arXiv](https://arxiv.org/abs/2410.23690).
+
 If you use this toolbox or benchmark in your research, please cite this project.
 
 ```bibtex
-@misc{xrdslam,
-    title={OpenXRLab Deep-learning based SLAM Toolbox and Benchmark},
-    author={XRDSLAM Contributors},
-    howpublished = {\url{https://github.com/openxrlab/xrdslam}},
-    year={2024}
-}
-
 @misc{wang2024xrdslamflexiblemodularframework,
-      title={XRDSLAM: A Flexible and Modular Framework for Deep Learning based SLAM}, 
+      title={XRDSLAM: A Flexible and Modular Framework for Deep Learning based SLAM},
       author={Xiaomeng Wang and Nan Wang and Guofeng Zhang},
       year={2024},
       eprint={2410.23690},
       archivePrefix={arXiv},
       primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2410.23690}, 
+      url={https://arxiv.org/abs/2410.23690},
 }
 ```
 
