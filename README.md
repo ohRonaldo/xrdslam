@@ -259,6 +259,16 @@ If you use this toolbox or benchmark in your research, please cite this project.
     howpublished = {\url{https://github.com/openxrlab/xrdslam}},
     year={2024}
 }
+
+@misc{wang2024xrdslamflexiblemodularframework,
+      title={XRDSLAM: A Flexible and Modular Framework for Deep Learning based SLAM}, 
+      author={Xiaomeng Wang and Nan Wang and Guofeng Zhang},
+      year={2024},
+      eprint={2410.23690},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2410.23690}, 
+}
 ```
 
 ## Projects in OpenXRLab
