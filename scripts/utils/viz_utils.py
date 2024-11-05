@@ -186,6 +186,7 @@ def draw_trajectory(queue, output, init_pose, cam_scale, save_rendering, near,
 
 
 class SLAMFrontend:
+
     def __init__(self,
                  output,
                  init_pose,

@@ -31,6 +31,7 @@ class VisualizerConfig(InstantiateConfig):
 
 
 class Visualizer():
+
     def __init__(self,
                  config: VisualizerConfig,
                  camera: Camera,

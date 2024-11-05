@@ -8,6 +8,7 @@ all_times = []
 
 
 class Timer:
+
     def __init__(self, name, enabled=True):
         self.name = name
         self.enabled = enabled
@@ -32,7 +33,7 @@ class Timer:
 
 
 def coords_grid(b, n, h, w, **kwargs):
-    """coordinate grid."""
+    """Coordinate grid."""
     x = torch.arange(0, w, dtype=torch.float, **kwargs)
     y = torch.arange(0, h, dtype=torch.float, **kwargs)
     coords = torch.stack(torch.meshgrid(y, x, indexing='ij'))
@@ -40,7 +41,7 @@ def coords_grid(b, n, h, w, **kwargs):
 
 
 def coords_grid_with_index(d, **kwargs):
-    """coordinate grid with frame index."""
+    """Coordinate grid with frame index."""
     b, n, h, w = d.shape
     x = torch.arange(0, w, dtype=torch.float, **kwargs)
     y = torch.arange(0, h, dtype=torch.float, **kwargs)
@@ -57,7 +58,7 @@ def coords_grid_with_index(d, **kwargs):
 
 
 def patchify(x, patch_size=3):
-    """extract patches from video."""
+    """Extract patches from video."""
     b, n, c, h, w = x.shape
     x = x.view(b * n, c, h, w)
     y = F.unfold(x, patch_size)
@@ -66,7 +67,7 @@ def patchify(x, patch_size=3):
 
 
 def pyramidify(fmap, lvls=[1]):
-    """turn fmap into a pyramid."""
+    """Turn fmap into a pyramid."""
     b, n, c, h, w = fmap.shape
 
     pyramid = []

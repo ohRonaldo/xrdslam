@@ -11,7 +11,7 @@ import torch
 def get_tensor_from_camera(RT, Tquad=False):
     """Convert transformation matrix to quaternion and translation."""
     gpu_id = -1
-    if type(RT) == torch.Tensor:
+    if isinstance(RT, torch.Tensor):
         if RT.get_device() != -1:
             RT = RT.detach().cpu()
             gpu_id = RT.get_device()

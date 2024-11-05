@@ -19,7 +19,7 @@ def coords_grid(ht, wd, **kwargs):
 
 
 def iproj(patches, intrinsics):
-    """inverse projection."""
+    """Inverse projection."""
     x, y, d = patches.unbind(dim=2)
     fx, fy, cx, cy = intrinsics[..., None, None].unbind(dim=2)
     i = torch.ones_like(d)
@@ -60,7 +60,7 @@ def transform(poses,
               valid=False,
               jacobian=False,
               tonly=False):
-    """projective transform."""
+    """Projective transform."""
 
     X0 = iproj(patches[:, kk], intrinsics[:, ii])
 
@@ -139,12 +139,12 @@ def transform(poses,
 
 
 def point_cloud(poses, patches, intrinsics, ix):
-    """generate point cloud from patches."""
+    """Generate point cloud from patches."""
     return poses[:, ix, None, None].inv() * iproj(patches, intrinsics[:, ix])
 
 
 def flow_mag(poses, patches, intrinsics, ii, jj, kk, beta=0.3):
-    """projective transform."""
+    """Projective transform."""
 
     coords0 = transform(poses, patches, intrinsics, ii, ii, kk)
     coords1 = transform(poses, patches, intrinsics, ii, jj, kk, tonly=False)

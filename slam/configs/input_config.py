@@ -497,5 +497,8 @@ AnnotatedBaseConfigUnion = tyro.conf.SuppressFixed[
     tyro.conf.FlagConversionOff[tyro.extras.subcommand_type_from_defaults(
         defaults=algorithm_configs, descriptions=descriptions)]]
 """Union[] type over config types, annotated with default instances for use
-with tyro.cli(). Allows the user to pick between one of several base
-configurations, and then override values in it."""
+with tyro.cli().
+
+Allows the user to pick between one of several base configurations, and
+then override values in it.
+"""

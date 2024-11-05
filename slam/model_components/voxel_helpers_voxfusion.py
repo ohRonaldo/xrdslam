@@ -167,6 +167,7 @@ def offset_points(point_xyz, quarter_voxel=1, offset_only=False, bits=2):
 
 
 class BallRayIntersect(Function):
+
     @staticmethod
     def forward(ctx, radius, n_max, points, ray_start, ray_dir):
         inds, min_depth, max_depth = _ext.ball_intersect(
@@ -188,6 +189,7 @@ ball_ray_intersect = BallRayIntersect.apply
 
 
 class AABBRayIntersect(Function):
+
     @staticmethod
     def forward(ctx, voxelsize, n_max, points, ray_start, ray_dir):
         # HACK: speed-up ray-voxel intersection by batching...
@@ -231,6 +233,7 @@ aabb_ray_intersect = AABBRayIntersect.apply
 
 
 class SparseVoxelOctreeRayIntersect(Function):
+
     @staticmethod
     def forward(ctx, voxelsize, n_max, points, children, ray_start, ray_dir):
         # HACK: avoid out-of-memory
@@ -279,6 +282,7 @@ svo_ray_intersect = SparseVoxelOctreeRayIntersect.apply
 
 
 class TriangleRayIntersect(Function):
+
     @staticmethod
     def forward(ctx, cagesize, blur_ratio, n_max, points, faces, ray_start,
                 ray_dir):
@@ -329,6 +333,7 @@ triangle_ray_intersect = TriangleRayIntersect.apply
 
 
 class UniformRaySampling(Function):
+
     @staticmethod
     def forward(
         ctx,
@@ -397,6 +402,7 @@ uniform_ray_sampling = UniformRaySampling.apply
 
 
 class InverseCDFRaySampling(Function):
+
     @staticmethod
     def forward(
         ctx,

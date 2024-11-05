@@ -119,17 +119,19 @@ def get_expon_lr_func(lr_init,
                       max_steps=1000000):
     """Copied from Plenoxels.
 
-    Continuous learning rate decay function. Adapted from JaxNeRF
-    The returned rate is lr_init when step=0 and lr_final when step=max_steps,
-    is log-linearly interpolated elsewhere (equivalent to exponential decay).
-    If lr_delay_steps>0 then the learning rate will be scaled by some smooth
-    function of lr_delay_mult, such that the initial learning rate is
-    lr_init*lr_delay_mult at the beginning of optimization but will be eased
-    back to the normal learning rate when steps>lr_delay_steps.
+    Continuous learning rate decay function. Adapted from JaxNeRF The
+    returned rate is lr_init when step=0 and lr_final when
+    step=max_steps, is log-linearly interpolated elsewhere (equivalent
+    to exponential decay). If lr_delay_steps>0 then the learning rate
+    will be scaled by some smooth function of lr_delay_mult, such that
+    the initial learning rate is lr_init*lr_delay_mult at the beginning
+    of optimization but will be eased back to the normal learning rate
+    when steps>lr_delay_steps.
     :param conf: config subtree 'lr' or similar
     :param max_steps: int, the number of steps during optimization.
-    :return HoF which takes step as input
+        :return HoF which takes step as input
     """
+
     def helper(step):
         if step < 0 or (lr_init == 0.0 and lr_final == 0.0):
             # Disable this parameter

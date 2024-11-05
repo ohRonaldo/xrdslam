@@ -20,7 +20,7 @@ class SchedulerConfig(InstantiateConfig):
     """Basic scheduler config."""
 
     _target: Type = field(default_factory=lambda: Scheduler)
-    """target class to instantiate"""
+    """Target class to instantiate."""
 
 
 class Scheduler:
@@ -70,6 +70,7 @@ class NiceSLAMScheduler(Scheduler):
 
     def get_scheduler(self, optimizer: Optimizer,
                       lr_init: float) -> LRScheduler:
+
         def func(step):
             if self.config.coarse:
                 learning_factor = self.config.stage_lr.coarse
@@ -101,6 +102,7 @@ class PointSLAMScheduler(Scheduler):
 
     def get_scheduler(self, optimizer: Optimizer,
                       lr_init: float) -> LRScheduler:
+
         def func(step):
             if step <= self.config.max_steps * self.config.geo_iter_ratio:
                 learning_factor = self.config.start_lr

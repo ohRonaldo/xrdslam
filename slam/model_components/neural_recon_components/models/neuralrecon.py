@@ -13,6 +13,7 @@ from .neucon_network import NeuConNet
 
 class NeuralRecon(nn.Module):
     """NeuralRecon main class."""
+
     def __init__(self, cfg):
         super(NeuralRecon, self).__init__()
         self.cfg = cfg.MODEL

@@ -19,6 +19,7 @@ from .modules import SPVCNN
 
 class NeuConNet(nn.Module):
     """Coarse-to-fine network."""
+
     def __init__(self, cfg):
         super(NeuConNet, self).__init__()
         self.cfg = cfg
@@ -53,15 +54,15 @@ class NeuConNet(nn.Module):
     def get_target(self, coords, inputs, scale):
         """Won't be used when 'fusion_on' flag is turned on.
 
-        :param coords: (Tensor), coordinates of voxels, (N, 4)
-                       (4 : Batch ind, x, y, z)
-        :param inputs: (List), inputs['tsdf_list' / 'occ_list']: ground truth
-                               volume list, [(B, DIM_X, DIM_Y, DIM_Z)]
+        :param coords: (Tensor), coordinates of voxels, (N, 4) (4 :
+            Batch ind, x, y, z)
+        :param inputs: (List), inputs['tsdf_list' / 'occ_list']: ground
+            truth volume list, [(B, DIM_X, DIM_Y, DIM_Z)]
         :param scale:
-        :return: tsdf_target: (Tensor), tsdf ground truth for
-                              each predicted voxels, (N,)
+        :return: tsdf_target: (Tensor), tsdf ground truth for each
+            predicted voxels, (N,)
         :return: occ_target: (Tensor), occupancy ground truth for each
-                                       predicted voxels, (N,)
+            predicted voxels, (N,)
         """
         with torch.no_grad():
             tsdf_target = inputs['tsdf_list'][scale]

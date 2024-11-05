@@ -36,6 +36,7 @@ class NeuralReconConfig(AlgorithmConfig):
 
 
 class NeuralRecon(Algorithm):
+
     def __init__(self, config: NeuralReconConfig, camera: Camera,
                  device: str) -> None:
         super().__init__(config, camera, device)

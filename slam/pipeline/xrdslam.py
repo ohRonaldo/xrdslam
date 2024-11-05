@@ -37,6 +37,7 @@ class XRDSLAMConfig(InstantiateConfig):
 
 
 class XRDSLAM():
+
     def __init__(self, config: XRDSLAMConfig) -> None:
         self.config = config
         # get dataset

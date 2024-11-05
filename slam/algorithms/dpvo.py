@@ -212,7 +212,7 @@ class DPVO(Algorithm):
 
     def corr(self, coords, indices=None):
         """This function is from DPVO, licensed under the MIT License."""
-        """local correlation volume."""
+        """Local correlation volume."""
         ii, jj = indices if indices is not None else (self.kk, self.jj)
         ii1 = ii % (self.M * self.mem)
         jj1 = jj % (self.mem)
@@ -224,7 +224,7 @@ class DPVO(Algorithm):
 
     def reproject(self, indices=None):
         """This function is from DPVO, licensed under the MIT License."""
-        """reproject patch k from i -> j."""
+        """Reproject patch k from i -> j."""
         (ii, jj, kk) = indices if indices is not None else (self.ii, self.jj,
                                                             self.kk)
         coords = pops.transform(SE3(self.poses), self.patches, self.intrinsics,
@@ -249,7 +249,7 @@ class DPVO(Algorithm):
 
     def motion_probe(self):
         """This function is from DPVO, licensed under the MIT License."""
-        """kinda hacky way to ensure enough motion for initialization."""
+        """Kinda hacky way to ensure enough motion for initialization."""
         kk = torch.arange(self.m - self.M, self.m, device='cuda')
         jj = self.n * torch.ones_like(kk)
         ii = self.ix[kk]
@@ -383,7 +383,7 @@ class DPVO(Algorithm):
 
     def get_all_poses(self):
         """This function is from DPVO, licensed under the MIT License."""
-        """interpolate missing poses."""
+        """Interpolate missing poses."""
         self.traj = {}
         for i in range(self.n):
             self.traj[self.tstamps_[i].item()] = self.poses_[i]

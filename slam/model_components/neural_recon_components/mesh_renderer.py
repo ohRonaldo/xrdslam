@@ -14,6 +14,7 @@ class Renderer():
 
     Used to render depthmaps from a mesh for 2d evaluation
     """
+
     def __init__(self, height=480, width=640):
         self.renderer = pyrender.OffscreenRenderer(width, height)
         self.scene = pyrender.Scene()

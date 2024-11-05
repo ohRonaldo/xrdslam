@@ -294,7 +294,8 @@ class ConvOnet(Model):
         """This function is modified from nice-slam, licensed under the Apache
         License, Version 2.0.
 
-        Load parameters of pretrained ConvOnet checkpoints to the decoders.
+        Load parameters of pretrained ConvOnet checkpoints to the
+        decoders.
         """
         if self.config.coarse:
             ckpt = torch.load(self.config.pretrained_decoders_coarse,

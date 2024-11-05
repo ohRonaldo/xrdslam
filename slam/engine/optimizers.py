@@ -67,6 +67,7 @@ class Optimizers:
         config: The optimizer configuration object.
         param_groups: A dictionary of parameter groups to optimize.
     """
+
     def __init__(self,
                  config: Dict[str, Any] = None,
                  param_groups: Dict[str, List[Parameter]] = None,

@@ -16,6 +16,7 @@ DIM = 384
 
 
 class Update(nn.Module):
+
     def __init__(self, p):
         super(Update, self).__init__()
 
@@ -53,7 +54,7 @@ class Update(nn.Module):
                                GradientClip(), nn.Sigmoid())
 
     def forward(self, net, inp, corr, flow, ii, jj, kk):
-        """update operator."""
+        """Update operator."""
         net = net + inp + self.corr(corr)
         net = self.norm(net)
         ix, jx = fastba.neighbors(kk, jj)
@@ -70,6 +71,7 @@ class Update(nn.Module):
 
 
 class Patchifier(nn.Module):
+
     def __init__(self, patch_size=3):
         super(Patchifier, self).__init__()
         self.patch_size = patch_size
@@ -90,7 +92,7 @@ class Patchifier(nn.Module):
                 disps=None,
                 gradient_bias=False,
                 return_color=False):
-        """extract patches from input images."""
+        """Extract patches from input images."""
         fmap = self.fnet(images) / 4.0
         imap = self.inet(images) / 4.0
 
@@ -152,6 +154,7 @@ class Patchifier(nn.Module):
 
 
 class CorrBlock:
+
     def __init__(self, fmap, gmap, radius=3, dropout=0.2, levels=[1, 4]):
         self.dropout = dropout
         self.radius = radius
@@ -166,6 +169,7 @@ class CorrBlock:
 
 
 class VONet(nn.Module):
+
     def __init__(self, use_viewer=False):
         super(VONet, self).__init__()
         self.P = 3

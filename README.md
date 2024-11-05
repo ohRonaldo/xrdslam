@@ -7,9 +7,8 @@
 <br/>
 
 <div align="left">
-<div align="left">
 
-[![Lint](https://github.com/openxrlab/xrdslam/actions/workflows/lint.yml/badge.svg)](https://github.com/openxrlab/xrdslam/actions/workflows/lint.yml) [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://github.com/openxrlab/xrdslam/blob/master/LICENSE)
+[![Lint](https://github.com/openxrlab/xrdslam/actions/workflows/lint.yml/badge.svg)](https://github.com/openxrlab/xrdslam/actions/workflows/lint.yml) [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://github.com/openxrlab/xrdslam/blob/master/LICENSE) [![arXiv](http://img.shields.io/badge/arXiv-2410.23690-B31B1B.svg)](https://arxiv.org/abs/2410.23690)
 
 </div>
 
@@ -23,9 +22,26 @@ We provide a set of pre-implemented deep-learning based SLAM algorithms.
 
 **Replica/office0**
 
-| [nice-slam](https://github.com/cvg/nice-slam)                | [co-slam](https://github.com/HengyiWang/Co-SLAM)             | [Vox-Fusion](https://github.com/zju3dv/Vox-Fusion)           | [Point_SLAM](https://github.com/eriksandstroem/Point-SLAM)   | [splaTAM](https://github.com/spla-tam/SplaTAM)               | [DPVO](https://github.com/princeton-vl/DPVO)                 | [NeuralRecon](https://github.com/zju3dv/NeuralRecon)         |
-| :----------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <img src="./docs/imgs/nice_slam.gif" alt="nice-slam" style="zoom: 50%;" /> | <img src="./docs/imgs/co_slam.gif" alt="nice-slam" style="zoom: 50%;" /> | <img src="./docs/imgs/vox_fusion.gif" alt="nice-slam" style="zoom: 50%;" /> | <img src="./docs/imgs/point_slam.gif" alt="nice-slam" style="zoom: 50%;" /> | <img src="./docs/imgs/splatam.gif" alt="nice-slam" style="zoom: 50%;" /> | <img src="./docs/imgs/dpvo.gif" alt="dpvo" style="zoom: 50%;" /> | <img src="./docs/imgs/neural_recon.gif" alt="neural_recon" style="zoom: 50%;" /> |
+<table>
+  <tr>
+    <th><a href="https://github.com/cvg/nice-slam">NICE-SLAM</a></th>
+    <th><a href="https://github.com/HengyiWang/Co-SLAM">Co-SLAM</a></th>
+    <th><a href="https://github.com/zju3dv/Vox-Fusion">Vox-Fusion</a></th>
+    <th><a href="https://github.com/eriksandstroem/Point-SLAM">Point-SLAM</a></th>
+    <th><a href="https://github.com/spla-tam/SplaTAM">SplaTAM</a></th>
+    <th><a href="https://github.com/princeton-vl/DPVO">DPVO</a></th>
+    <th><a href="https://github.com/zju3dv/NeuralRecon">NeuralRecon</a></th>
+  </tr>
+  <tr>
+    <td><img src="./docs/imgs/nice_slam.gif" alt="nice-slam" width="100px" /></td>
+    <td><img src="./docs/imgs/co_slam.gif" alt="co-slam" width="100px" /></td>
+    <td><img src="./docs/imgs/vox_fusion.gif" alt="vox-fusion" width="100px" /></td>
+    <td><img src="./docs/imgs/point_slam.gif" alt="point-slam" width="100px" /></td>
+    <td><img src="./docs/imgs/splatam.gif" alt="splaTAM" width="100px" /></td>
+    <td><img src="./docs/imgs/dpvo.gif" alt="dpvo" width="100px" /></td>
+    <td><img src="./docs/imgs/neural_recon.gif" alt="neural_recon" width="100px" /></td>
+  </tr>
+</table>
 
 ## Quickstart
 
@@ -172,41 +188,45 @@ usage: ds-eval [-h] --output-dir PATH --gt-mesh {None}|STR
 
 The figure below is the algorithm pipeline. When adding a new deep-learning based SLAM algorithm, you need to register the algorithm in **input_config.py** and re-inherit and implement the functions in the **Algorithm** and **Model** classes. For details, please see [adding_a_new_algorithm ](docs/adding_a_new_algorithm.md)
 
-![pipeline](docs/imgs/pipeline.png)
+![pipeline](docs/imgs/SLAM_components.png)
 
 ### 5. Benchmark
 
 Here are the comparison results on **Replica** datasets. The results of the original algorithm comes from multiple papers.
 
-The algorithms with _X suffix are the corresponding algorithms in the XRDSLAM framework. For details, see [benchmark](docs/benchmark.md).
+The algorithms with * suffix are the corresponding algorithms in the XRDSLAM framework. For details, see [benchmark](docs/benchmark.md).
 
-(DPVO is a visual odometry (VO) algorithm that does not generate meshes, and  DPVO paper does not provide results for the Replica datasets. Therefore, here we only present the trajectory metrics from  XRDSLAM framework.  The comparison results of DPVO for the Euroc dataset can be found in the [benchmark](docs/benchmark.md). NeuralRecon is a mapping algorithm, and  NeuralRecon paper does not provide results for the Replica datasets. Therefore, here we only present the mesh metrics from  XRDSLAM framework.  The comparison results of NeuralRecon for the 7Scenes dataset can be found in the [benchmark](docs/benchmark.md).)
+DPVO is a visual odometry (VO) algorithm that does not generate meshes, and  DPVO paper does not provide results for the Replica datasets. Therefore, here we only present the trajectory metrics from  XRDSLAM framework.  The comparison results of DPVO for the Euroc dataset can be found in the [benchmark](docs/benchmark.md). NeuralRecon is a mapping algorithm, and  NeuralRecon paper does not provide results for the Replica datasets. Therefore, here we only present the mesh metrics from  XRDSLAM framework.  The comparison results of NeuralRecon for the 7Scenes dataset can be found in the [benchmark](docs/benchmark.md).
 
 Note: The default configuration in the algorithm is suitable for Replica. If you use other datasets, you need to modify the corresponding configuration items in slam/configs/input_config.py.
 
 | Algorithm       | ATE RMSE [cm] -     | PSNR+ | SSIM+ | LPIPS- | Precision [%] + | Recall [%] + | F1[%] + | Depth L1[cm] - | Acc. [cm]-     | Comp. [cm]-    | Comp. Ratio [<5cm %] + |
 | ------------ | ------------------- | ----- | ----- | ------ | --------------- | ------------ | ------- | -------------- | -------------- | -------------- | ---------------------- |
-| NICE-SLAM    | 1.95 | 24.42 | 0.81  | 0.23   | 44.10           | 43.69        | 43.86   | 3.53 | 2.85 | 3.00        | 89.33      |
-| NICE-SLAM_X  | 2.09                | 25.68 | 0.85  | 0.32   | 46.62           | 37.53        | 41.47   | 2.62           | 2.03           | 3.38           | 87.81                  |
-| Co-SLAM      | 1.00           | 30.24 | 0.93  | 0.25   | -               | -            | -       | 1.51           | 2.10           | 2.08           | 93.44                  |
-| Co-SLAM_X    | 1.11                | 30.34 | 0.93  | 0.24   | 80.66           | 68.79        | 74.23   | 1.63           | 1.53           | 2.90           | 89.81                  |
-| Vox-Fusion   | 0.54 | 24.41 | 0.80  | 0.24   | 55.73           | 49.13        | 52.20   | 2.46      | 2.37           | 2.28           | 92.86                  |
-| Vox-Fusion_X | 0.56                | 27.95 | 0.90  | 0.25   | 89.52           | 71.34        | 79.39   | 1.03           | 1.39           | 2.82           | 90.13                  |
-| Point-SLAM   | 0.52           | 35.17 | 0.97  | 0.12   | 96.99           | 83.59        | 89.77   | 0.44           | -              | -              | -                      |
-| Point-SLAM_X | 0.47                | 34.10 | 0.97  | 0.10   | 99.30           | 83.78        | 90.86   | 0.38           | 1.25           | 3.12           | 88.15                  |
-| SplaTAM      | 0.36                | 34.11 | 0.97  | 0.10   | -               | -            | -       | -              | -              | -              | -                      |
-| SplaTAM_X    | 0.40                | 34.44 | 0.96  | 0.09   | -               | -            | -       | -              | -              | -              | -                      |
-| DPVO_X | 0.31 | - | - | - | - | - | - | - | - | - | - |
-| NeuralRecon_X | - | - | - | - | 13.29 | 7.43 | 9.51 | - | 5.87 | 19.36 | 38.13 |
+| NICE-SLAM    | **1.95** | 24.42 | 0.81  | **0.23** | 44.10           | **43.69**    | **43.86** | 3.53 | 2.85 | **3.00**    | **89.33**  |
+| NICE-SLAM* | 2.09                | **25.68** | **0.85** | 0.32   | **46.62**       | 37.53        | 41.47   | **2.62**       | **2.03**       | 3.38           | 87.81                  |
+| Co-SLAM      | **0.86**   | 30.24 | **0.93** | 0.25   | -               | -            | -       | **1.51**       | 2.10           | **2.08**       | **93.44**              |
+| Co-SLAM*  | 1.11                | **30.34** | **0.93** | **0.24** | 80.66           | 68.79        | 74.23   | 1.63           | **1.53**       | 2.90           | 89.81                  |
+| Vox-Fusion   | **0.54** | 24.41 | 0.80  | **0.24** | 55.73           | 49.13        | 52.20   | 2.46      | 2.37           | **2.28**       | **92.86**              |
+| Vox-Fusion* | 0.56                | **27.95** | **0.90** | 0.25   | **89.52**       | **71.34**    | **79.39** | **1.03**       | **1.39**       | 2.82           | 90.13                  |
+| Point-SLAM   | 0.52           | **35.17** | **0.97** | 0.12   | 96.99           | 83.59        | 89.77   | 0.44           | -              | -              | -                      |
+| Point-SLAM* | **0.47**            | 34.10 | **0.97** | **0.10** | **99.30**       | **83.78**    | **90.86** | **0.38**       | 1.25           | 3.12           | 88.15                  |
+| SplaTAM      | **0.36**            | 34.11 | **0.97** | 0.10   | -               | -            | -       | -              | -              | -              | -                      |
+| SplaTAM*   | 0.40                | **34.44** | 0.96  | **0.09** | -               | -            | -       | -              | -              | -              | -                      |
+| DPVO* | 0.31 | - | - | - | - | - | - | - | - | - | - |
+| NeuralRecon* | - | - | - | - | 13.29 | 7.43 | 9.51 | - | 5.87 | 19.36 | 38.13 |
 
 ## License
 
 The license for our codebase is under the [Apache-2.0](LICENSE).
 Please note that this license only applies to the code in our library, the dependencies of which are separate and individually licensed. In the source code files, we have made specific licensing declarations for the third-party code being used. We would like to pay tribute to open-source implementations to which we rely on. Please be aware that utilizing both external dependencies and the fundamental code from their original sources might impact our codebase's licensing.
 
+## Contributing
+
+We appreciate all contributions to improve XRDSLAM. Please refer to [contributing.md](docs/contributing.md) for the contributing guideline.
+
 ## Acknowledgement
 
-In addition to the implemented algorithm ([nice-slam](https://github.com/cvg/nice-slam),[co-slam](https://github.com/HengyiWang/Co-SLAM),[Vox-Fusion](https://github.com/zju3dv/Vox-Fusion),[Point_SLAM](https://github.com/eriksandstroem/Point-SLAM),[splaTAM](https://github.com/spla-tam/SplaTAM), [DPVO](https://github.com/princeton-vl/DPVO), [NeuralRecon](https://github.com/zju3dv/NeuralRecon)), our code also adapt some codes from [nerfStudio](https://github.com/nerfstudio-project/nerfstudio/), [sdfstudio](https://autonomousvision.github.io/sdfstudio/). Thanks for making the code available.
+In addition to the implemented algorithm ([NICE-SLAM](https://github.com/cvg/nice-slam),[Co-SLAM](https://github.com/HengyiWang/Co-SLAM),[Vox-Fusion](https://github.com/zju3dv/Vox-Fusion),[Point-SLAM](https://github.com/eriksandstroem/Point-SLAM),[SplaTAM](https://github.com/spla-tam/SplaTAM), [DPVO](https://github.com/princeton-vl/DPVO), [NeuralRecon](https://github.com/zju3dv/NeuralRecon)), our code also adapt some codes from [Nerfstudio](https://github.com/nerfstudio-project/nerfstudio/), [Sdfstudio](https://autonomousvision.github.io/sdfstudio/). Thanks for making the code available.
 
 ## Built On
 
@@ -228,15 +248,19 @@ In addition to the implemented algorithm ([nice-slam](https://github.com/cvg/nic
 
 
 ## Citation
+You can find a paper writeup of the framework on [arXiv](https://arxiv.org/abs/2410.23690).
 
 If you use this toolbox or benchmark in your research, please cite this project.
 
 ```bibtex
-@misc{xrdslam,
-    title={OpenXRLab Deep-learning based SLAM Toolbox and Benchmark},
-    author={XRDSLAM Contributors},
-    howpublished = {\url{https://github.com/openxrlab/xrdslam}},
-    year={2024}
+@misc{wang2024xrdslamflexiblemodularframework,
+      title={XRDSLAM: A Flexible and Modular Framework for Deep Learning based SLAM},
+      author={Xiaomeng Wang and Nan Wang and Guofeng Zhang},
+      year={2024},
+      eprint={2410.23690},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2410.23690},
 }
 ```
 

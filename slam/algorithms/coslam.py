@@ -39,6 +39,7 @@ class CoSLAMConfig(AlgorithmConfig):
 
 
 class CoSLAM(Algorithm):
+
     def __init__(self, config: CoSLAMConfig, camera: Camera,
                  device: str) -> None:
         super().__init__(config, camera, device)

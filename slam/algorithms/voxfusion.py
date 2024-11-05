@@ -28,6 +28,7 @@ class VoxFusionConfig(AlgorithmConfig):
 
 
 class VoxFusion(Algorithm):
+
     def __init__(self, config: VoxFusionConfig, camera: Camera,
                  device: str) -> None:
         super().__init__(config, camera, device)
@@ -202,9 +203,7 @@ class VoxFusion(Algorithm):
         verts, faces = self.marching_cubes(
             voxel_centres,
             sdf_grid)  # [N_verts, 3], [N_face, 3 (3 ids of verts)]
-        '''
-        # TODO: clean mesh need depth and pose, use key frame info
-        '''
+        """# TODO: clean mesh need depth and pose, use key frame info"""
         colors = None
         if require_color:
             verts_torch = torch.from_numpy(verts).float().cuda()

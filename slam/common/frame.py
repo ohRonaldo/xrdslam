@@ -8,6 +8,7 @@ from slam.utils.opt_pose import OptimizablePose
 
 
 class Frame(nn.Module):
+
     def __init__(self,
                  fid,
                  rgb,

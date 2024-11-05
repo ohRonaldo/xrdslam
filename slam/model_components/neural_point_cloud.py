@@ -10,6 +10,7 @@ import torch.nn as nn
 
 
 class NeuralPointCloud(nn.Module):
+
     def __init__(self, c_dim, nn_num, radius_add, cuda_id, radius_min,
                  radius_query, fix_interval_when_add_along_ray,
                  use_dynamic_radius, N_surface, N_add, near_end_surface,

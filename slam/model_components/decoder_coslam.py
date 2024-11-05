@@ -7,6 +7,7 @@ import torch.nn as nn
 
 
 class ColorNet(nn.Module):
+
     def __init__(self, config, input_ch=4):
         super(ColorNet, self).__init__()
         self.input_ch = input_ch
@@ -57,6 +58,7 @@ class ColorNet(nn.Module):
 
 
 class SDFNet(nn.Module):
+
     def __init__(self, config, input_ch=3):
         super(SDFNet, self).__init__()
         self.input_ch = input_ch
@@ -113,6 +115,7 @@ class SDFNet(nn.Module):
 
 class ColorSDFNet(nn.Module):
     """Color grid + SDF grid."""
+
     def __init__(self, config, input_ch=3, input_ch_pos=12):
         super(ColorSDFNet, self).__init__()
         self.color_net = ColorNet(config, input_ch=input_ch + input_ch_pos)
@@ -138,6 +141,7 @@ class ColorSDFNet(nn.Module):
 
 class ColorSDFNet_v2(nn.Module):
     """No color grid."""
+
     def __init__(self, config, input_ch=3, input_ch_pos=12):
         super(ColorSDFNet_v2, self).__init__()
         self.color_net = ColorNet(config, input_ch=input_ch_pos)

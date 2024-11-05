@@ -58,6 +58,7 @@ def get_dataset(data_path, data_type, device='cuda:0'):
 
 # RGBD dataset
 class BaseDataset(Dataset):
+
     def __init__(self, data_path, device='cuda:0'):
         super(BaseDataset, self).__init__()
         self.data_format = 'RGBD'
@@ -138,6 +139,7 @@ class BaseDataset(Dataset):
 
 
 class Replica(BaseDataset):
+
     def __init__(self, data_path, device='cuda:0'):
         super(Replica, self).__init__(data_path, device)
         self.color_paths = sorted(
@@ -168,6 +170,7 @@ class Replica(BaseDataset):
 
 # mono_imu dataset
 class Euroc(Dataset):
+
     def __init__(self, data_path, device='cuda:0'):
 
         self.data_format = 'MonoImu'
@@ -334,6 +337,7 @@ class Euroc(Dataset):
 
 
 class Azure(BaseDataset):
+
     def __init__(self, data_path, device='cuda:0'):
         super(Azure, self).__init__(data_path, device)
         self.color_paths = sorted(
@@ -371,6 +375,7 @@ class Azure(BaseDataset):
 
 
 class ScanNet(BaseDataset):
+
     def __init__(self, data_path, device='cuda:0'):
         super(ScanNet, self).__init__(data_path, device)
         self.input_folder = os.path.join(self.input_folder, 'frames')
@@ -402,6 +407,7 @@ class ScanNet(BaseDataset):
 
 
 class Scenes7(BaseDataset):
+
     def __init__(self, data_path, device='cuda:0'):
         super(Scenes7, self).__init__(data_path, device)
         self.color_paths = sorted(
@@ -436,6 +442,7 @@ class Scenes7(BaseDataset):
 
 
 class CoFusion(BaseDataset):
+
     def __init__(self, data_path, device='cuda:0'):
         super(CoFusion, self).__init__(data_path, device)
         self.input_folder = os.path.join(data_path)
@@ -459,6 +466,7 @@ class CoFusion(BaseDataset):
 
 
 class TUM_RGBD(BaseDataset):
+
     def __init__(self, data_path, device='cuda:0'):
         super(TUM_RGBD, self).__init__(data_path, device)
         self.color_paths, self.depth_paths, self.poses = self.loadtum(
@@ -466,7 +474,7 @@ class TUM_RGBD(BaseDataset):
         self.n_img = len(self.color_paths)
 
     def parse_list(self, filepath, skiprows=0):
-        """read list data."""
+        """Read list data."""
         data = np.loadtxt(filepath,
                           delimiter=' ',
                           dtype=np.unicode_,
@@ -478,7 +486,7 @@ class TUM_RGBD(BaseDataset):
                          tstamp_depth,
                          tstamp_pose,
                          max_dt=0.08):
-        """pair images, depths, and poses."""
+        """Pair images, depths, and poses."""
         associations = []
         for i, t in enumerate(tstamp_image):
             if tstamp_pose is None:
@@ -497,7 +505,7 @@ class TUM_RGBD(BaseDataset):
         return associations
 
     def loadtum(self, datapath, frame_rate=-1):
-        """read video data in tum-rgbd format."""
+        """Read video data in tum-rgbd format."""
         if os.path.isfile(os.path.join(datapath, 'groundtruth.txt')):
             pose_list = os.path.join(datapath, 'groundtruth.txt')
         elif os.path.isfile(os.path.join(datapath, 'pose.txt')):
@@ -544,7 +552,7 @@ class TUM_RGBD(BaseDataset):
         return images, depths, poses
 
     def pose_matrix_from_quaternion(self, pvec):
-        """convert 4x4 pose matrix to (t, q)"""
+        """Convert 4x4 pose matrix to (t, q)"""
         from scipy.spatial.transform import Rotation
 
         pose = np.eye(4)
